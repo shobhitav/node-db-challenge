@@ -1,5 +1,4 @@
 const express = require('express');
-//  const knex = require('knex');
 const db= require('../data/db-config.js');
 const Resources = require('./resource-model.js');
 

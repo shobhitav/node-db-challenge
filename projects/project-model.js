@@ -1,22 +1,24 @@
 const db=require('../data/db-config.js');
- 
+const knex = require('knex');
+
 module.exports={
    find,
    findById,
    findTasks,
-    add,
-    addTask,
-  
+   add,
+   addTask
 }
 // GET
 function find(){
-   return db('projects');
+   return db('projects')
+   //.select('projects.id','projects.name','projects.description',knex.raw(`(case when projects.completed = 1 then 'true' else 'false' end) as completed`));
 }
 
 //GET BY ID
 function findById(id){
-   return db('projects').
-   where({id})
+   return db('projects')
+   //.select('projects.id','projects.name','projects.description',knex.raw(`(case when projects.completed = 1 then 'true' else 'false' end) as completed`))
+   .where({id})
 }
 
 // POST
@@ -29,7 +31,8 @@ async function add(project){
 function findTasks(project_id){
    return db('projects')
    .join('tasks','projects.id','tasks.project_id')
-   .select('projects.name','tasks.id','tasks.description','tasks.notes','tasks.completed')
+   //.select('projects.name','tasks.id','tasks.description','tasks.notes', knex.raw(`(case when tasks.completed = 1 then 'true' else 'false' end) as completed`))
+   .select('projects.name','tasks.id','tasks.description','tasks.notes', 'tasks.completed')
    .where({project_id})
    .orderBy('tasks.id')
   }
