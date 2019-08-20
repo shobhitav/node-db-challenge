@@ -40,15 +40,19 @@ Demonstrate your understanding of this week's concepts by answering the followin
 
 - [1] Explain the difference between `Relational Databases` and `SQL`.
 
+      Relational Database is the database software itself, which manages storage, querying, updating, and, well, everything. Specifically, it uses a relational model of data, as the name suggests.relational
+      database is the system, and SQL is the language used to interact with the system.
+
 - [2] Why do tables need a `primary key`?
-     In order for a table to qualify as a relational table it must have a primary key.
-      Primary key uniquely identify a record in the table.
+      In order for a table to qualify as a relational table it must have a primary key.
+        Primary key uniquely identify a record in the table.
 - [3] What is the name given to a table column that references the primary key on another table.
-      Foriegn key.
+
+       It is called a Foriegn key.A foreign key is a column or group of columns in a relational database table that provides a link between data in two tables. It acts as a cross-reference between tables because it references the primary key of another table, thereby establishing a link between them.
 
 - [ 4] What do we need in order to have a _many to many_ relationship between two tables.
-      
-      A middle table with composite ids.
+    
+       A middle table with composite ids.
 
 ## Minimum Viable Product
 
